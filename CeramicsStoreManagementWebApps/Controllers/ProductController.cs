@@ -25,38 +25,41 @@ namespace CeramicsStoreManagementWebApps.Controllers
         [HttpPost]
         public ActionResult Add(ProductViewModel product)
         {
-            Product aProduct = new Product()
+            if (ModelState.IsValid)
             {
-                Name = product.Name,
-                Color = product.Color,
-                Size = product.Size,
-                Description = product.Description,
-                BrandID = product.BrandID,
-                CountryID = product.CountryID,
-            };
-            db.Products.Add(aProduct);
-            db.SaveChanges();
+                Product aProduct = new Product()
+                {
+                    Name = product.Name,
+                    Color = product.Color,
+                    Size = product.Size,
+                    Description = product.Description,
+                    BrandID = product.BrandID,
+                    CountryID = product.CountryID,
+                };
+                db.Products.Add(aProduct);
+                db.SaveChanges();
 
-            Product productID = aProductManager.GetProductID();
-            Price aPrice = new Price()
-            {
-                ProductID = productID.ID,
-                Purches = product.PurchesPrice,
-                MinSelling = product.MinSellingPrice,
-                MaxSelling = product.MaxSellingPrice,
-            };
-            db.Prices.Add(aPrice);
-            db.SaveChanges();
+                Product productID = aProductManager.GetProductID();
+                Price aPrice = new Price()
+                {
+                    ProductID = productID.ID,
+                    Purches = product.PurchesPrice,
+                    MinSelling = product.MinSellingPrice,
+                    MaxSelling = product.MaxSellingPrice,
+                };
+                db.Prices.Add(aPrice);
+                db.SaveChanges();
 
-            Store aStore = new Store()
-            {
-                Quentity = product.Quentity,
-                ProductID = productID.ID,
-            };
+                Store aStore = new Store()
+                {
+                    Quentity = product.Quentity,
+                    ProductID = productID.ID,
+                };
 
-            db.Stores.Add(aStore);
-            db.SaveChanges();
-
+                db.Stores.Add(aStore);
+                db.SaveChanges();
+                ModelState.Clear();
+            }
 
 
             ViewBag.Brands = new SelectList(db.Brands, "ID", "Name");
@@ -64,6 +67,10 @@ namespace CeramicsStoreManagementWebApps.Controllers
             return View();
         }
 
+        public ActionResult Display()
+        {
+            return View();
+        }
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
