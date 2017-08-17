@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeramicsStoreManagementWebApps", "CeramicsStoreManagementWebApps\CeramicsStoreManagementWebApps.csproj", "{8CE5764B-1B4C-445B-A186-3CE543A5AE98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeramicsStoreManagementWebApps.Tests", "CeramicsStoreManagementWebApps.Tests\CeramicsStoreManagementWebApps.Tests.csproj", "{4FE3B423-5066-418B-8F3E-D0CB9B5B8C8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CE5764B-1B4C-445B-A186-3CE543A5AE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE5764B-1B4C-445B-A186-3CE543A5AE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE5764B-1B4C-445B-A186-3CE543A5AE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE5764B-1B4C-445B-A186-3CE543A5AE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FE3B423-5066-418B-8F3E-D0CB9B5B8C8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE3B423-5066-418B-8F3E-D0CB9B5B8C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE3B423-5066-418B-8F3E-D0CB9B5B8C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE3B423-5066-418B-8F3E-D0CB9B5B8C8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
