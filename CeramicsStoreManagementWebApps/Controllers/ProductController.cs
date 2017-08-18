@@ -1,6 +1,7 @@
 ﻿using CeramicsStoreManagementWebApps.BLL;
 using CeramicsStoreManagementWebApps.Models;
 using CeramicsStoreManagementWebApps.Models.ViewModel;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace CeramicsStoreManagementWebApps.Controllers
@@ -9,11 +10,11 @@ namespace CeramicsStoreManagementWebApps.Controllers
     {
         ApplicationDbContext db = new ApplicationDbContext();
         ProductManager aProductManager = new ProductManager();
-        // GET: Product
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //// GET: Product
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 
         // GET: Product/Add
         public ActionResult Add()
@@ -69,78 +70,83 @@ namespace CeramicsStoreManagementWebApps.Controllers
 
         public ActionResult Display()
         {
-            return View();
-        }
-        // GET: Product/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
+            List<ProductDisplay> all = aProductManager.GetAllProduct();
+            return View(all);
         }
 
-        // GET: Product/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
 
-        // POST: Product/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Product/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+        //// GET: Product/Details/5
+        //public ActionResult Details(int id)
+        //{
+        //    return View();
+        //}
 
-        // POST: Product/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
+        //// GET: Product/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: Product/Create
+        //[HttpPost]
+        //public ActionResult Create(FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add insert logic here
 
-        // GET: Product/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
-        // POST: Product/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+        //// GET: Product/Edit/5
+        //public ActionResult Edit(int id)
+        //{
+        //    return View();
+        //}
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: Product/Edit/5
+        //[HttpPost]
+        //public ActionResult Edit(int id, FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add update logic here
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
+
+        //// GET: Product/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
+
+        //// POST: Product/Delete/5
+        //[HttpPost]
+        //public ActionResult Delete(int id, FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add delete logic here
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }

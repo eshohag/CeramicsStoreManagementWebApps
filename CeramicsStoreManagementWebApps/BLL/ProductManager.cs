@@ -1,5 +1,7 @@
 ﻿using CeramicsStoreManagementWebApps.Gateway;
 using CeramicsStoreManagementWebApps.Models;
+using CeramicsStoreManagementWebApps.Models.ViewModel;
+using System.Collections.Generic;
 
 namespace CeramicsStoreManagementWebApps.BLL
 {
@@ -9,6 +11,11 @@ namespace CeramicsStoreManagementWebApps.BLL
         public Product GetProductID()
         {
             return aProductGateway.GetProductID();
+        }
+
+        public List<ProductDisplay> GetAllProduct()
+        {
+            return aProductGateway.GetAllProduct();
         }
     }
 }

@@ -1,0 +1,120 @@
+﻿@model IEnumerable<CeramicsStoreManagementWebApps.Models.ViewModel.ProductDisplay>
+
+@{
+    ViewBag.Title = "Display";
+}
+@section CSSFileBodyNeeded
+{
+
+    <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+}
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinSellingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxSellingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManufacturingCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quentity)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinSellingPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxSellingPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufacturingCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quentity)
+            </td>
+
+        </tr>
+    }
+
+</table>*@
+
+<table id="myTable" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Manufacturing Country</th>
+        <th>Min Selling</th>
+        <th>Max Selling</th>
+        <th>Quentity</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Manufacturing Country</th>
+        <th>Min Selling</th>
+        <th>Max Selling</th>
+        <th>Quentity</th>
+    </tr>
+    </tfoot>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Brand</td>
+            <td>@item.ManufacturingCountry</td>
+            <td>@item.MinSellingPrice</td>
+            <td>@item.MaxSellingPrice</td>
+            <td>@item.Quentity</td>
+
+        </tr>
+    }
+
+    </tbody>
+
+
+</table>
+
+
+@section scripts
+{
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+            var table = $('#myTable').DataTable();
+    
+            table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {       
+                var cell = table.cell({ row: rowIdx, column: 0 }).node();
+                $(cell).addClass('warning');        
+            });
+        } );
+    </script>
+}

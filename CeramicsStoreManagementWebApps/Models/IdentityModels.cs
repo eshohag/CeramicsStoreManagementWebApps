@@ -52,6 +52,5 @@ namespace CeramicsStoreManagementWebApps.Models
         public DbSet<Status> Statuses { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Country> Countries { get; set; }
-
     }
 }
